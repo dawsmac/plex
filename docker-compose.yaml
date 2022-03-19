@@ -8,8 +8,6 @@ networks:
 services:
   plex:
     image: lscr.io/linuxserver/plex
-    devices:
-      -  /dev/dri/renderD128:/dev/dri/renderD128 # for intel hwaccel, needs to be updated for your hardware
     ports:
       - 32400:32400
       - 1900:1900/udp
@@ -28,6 +26,7 @@ services:
       - PLEX_CLAIM= #optional
     volumes:
       - /mnt/docker_data/Plex:/config
+      - /dev/dri/renderD128:/dev/dri/renderD128:ro
       #- /path/to/tvseries:/tv
       #- /path/to/movies:/movies
   
