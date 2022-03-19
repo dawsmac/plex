@@ -1,0 +1,25 @@
+version: "3.9"
+
+networks:
+    dock_inter:
+        external: true
+        name: dock_inter
+        
+services:
+  plex:
+    image: lscr.io/linuxserver/plex
+    container_name: plex
+    devices:
+      - /dev/dri/renderD128 # for intel hwaccel, needs to be updated for your hardware
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - VERSION=docker
+      - PLEX_CLAIM= #optional
+    volumes:
+      - /mnt/docker_data/Plex:/config
+      #- /path/to/tvseries:/tv
+      #- /path/to/movies:/movies
+  
+   networks:
+      - dock_inter
