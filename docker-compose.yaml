@@ -10,7 +10,7 @@ services:
     image: lscr.io/linuxserver/plex
     devices:
       - /dev/dri/renderD128 # for intel hwaccel, needs to be updated for your hardware
-    port:
+    ports:
       - 32400:32400
       - 1900:1900/udp
       - 3005:3005
