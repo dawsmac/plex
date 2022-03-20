@@ -27,8 +27,8 @@ services:
     volumes:
       - /mnt/docker_data/Plex:/config
       - /dev/dri/renderD128:/dev/dri/renderD128:ro
-      #- /path/to/tvseries:/tv
-      #- /path/to/movies:/movies
+      - /nfs/Media/tv:/tv
+      - /nfs/Media/Movies:/movies
   
     networks:
       - dock_inter
