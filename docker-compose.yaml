@@ -29,7 +29,7 @@ services:
       - /dev/dri/renderD128:/dev/dri/renderD128:ro
       - /nfs/Media/tv:/tv
       - /nfs/Media/Movies:/movies
-      - nfs/Media/Music:/Music
+      - /nfs/Media/Music:/Music
   
     networks:
       - dock_inter
